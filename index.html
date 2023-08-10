@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+    <div id="circle1" class="circles"></div>
+    <div id="circle2" class="circles2"></div>
+    <div id="circle3" class="circles3"></div>
+
+    <button id="change" onclick="color1()">Red</button>
+    <button id="change" onclick="color2()">Yellow</button>
+    <button id="change" onclick="color3()">Green</button>
+
+    <script>
+
+        function color1(){
+            document.getElementById('circle1').style.backgroundColor = 'red'
+            document.getElementById('circle2').style.backgroundColor = ''
+            document.getElementById('circle3').style.backgroundColor = ''
+        }
+
+        function color2(){
+            document.getElementById('circle1').style.backgroundColor = ''
+            document.getElementById('circle2').style.backgroundColor = 'yellow'
+            document.getElementById('circle3').style.backgroundColor = ''
+        }
+
+        function color3(){
+            document.getElementById('circle1').style.backgroundColor = ''
+            document.getElementById('circle2').style.backgroundColor = ''
+            document.getElementById('circle3').style.backgroundColor = 'green'
+        }
+
+        function autoTrafficLight() {
+            color1();
+            setTimeout(color2, 1000);
+            setTimeout(color3, 2000);
+            setTimeout(autoTrafficLight, 3000)
+        }
+        autoTrafficLight();
+    </script>
+
+</body>
+</html>
